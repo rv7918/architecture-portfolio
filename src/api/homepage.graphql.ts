@@ -15,6 +15,7 @@ export const getHomepageData = async () => {
           title
           slug
           summary
+          thumbnail { url }
         }
       }
     }
