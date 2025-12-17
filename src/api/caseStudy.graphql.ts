@@ -1,15 +1,14 @@
 import { fetchGraphQL } from "../lib/contentfulGraphql";
 
-export const getCaseStudies = async () => {
+export const getCaseStudyBySlug = async (slug: string) => {
   const query = `
     {
-      architectureCaseStudyCollection {
+      architectureCaseStudyCollection(where: { slug: "${slug}" }, limit: 1) {
         items {
           sys { id }
           title
           slug
           summary
-          thumbnail { url }
           body { json }
           systemDiagram { url }
           dataFlowDiagram { url }
@@ -19,5 +18,7 @@ export const getCaseStudies = async () => {
     }
   `;
   const res = await fetchGraphQL(query);
-  return res.data.architectureCaseStudyCollection.items;
+  const items = res.data.architectureCaseStudyCollection.items;
+  return items.length > 0 ? items[0] : null;
 };
+
