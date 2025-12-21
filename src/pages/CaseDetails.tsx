@@ -24,7 +24,7 @@ const CaseDetails = () => {
 
         {caseStudy.systemDiagram?.url && (
           <div>
-            <h2 className="text-2xl font-semibold pt-3 text-gray-700">System Diagram</h2>
+            <h2 className="text-2xl font-semibold pt-3 text-gray-700 mb-4 mt-3">System Diagram</h2>
             <img 
               src={caseStudy.systemDiagram.url} 
               alt={`${caseStudy.title} - System Diagram`} 
@@ -35,7 +35,7 @@ const CaseDetails = () => {
 
         {caseStudy.dataFlowDiagram?.url && (
           <div>
-            <h2 className="text-2xl font-semibold pt-4 text-gray-700">Data Flow Diagram</h2>
+            <h2 className="text-2xl font-semibold pt-4 text-gray-700 mb-4 mt-7">Data Flow Diagram</h2>
             <img 
               src={caseStudy.dataFlowDiagram.url} 
               alt={`${caseStudy.title} - Data Flow Diagram`} 
@@ -46,7 +46,7 @@ const CaseDetails = () => {
 
         {caseStudy.sequenceDiagram?.url && (
           <div>
-            <h2 className="text-2xl font-semibold pt-4 text-gray-700">Sequence Diagram</h2>
+            <h2 className="text-2xl font-semibold pt-4 text-gray-700 mb-4 mt-7">Sequence Diagram</h2>
             <img 
               src={caseStudy.sequenceDiagram.url} 
               alt={`${caseStudy.title} - Sequence Diagram`} 
